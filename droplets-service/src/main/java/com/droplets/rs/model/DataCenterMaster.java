@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class DataCenterLocationMaster {
+public class DataCenterMaster {
 
 	@Id
 	@GeneratedValue

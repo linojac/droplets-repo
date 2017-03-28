@@ -23,7 +23,7 @@ public class Droplet {
 	private long dropletId;
 	private String dropletName;
 	@ManyToOne(fetch = FetchType.LAZY)
-	private DataCenterLocationMaster dataCenterLocation;
+	private DataCenterMaster dataCenterLocation;
 	@ManyToOne(fetch = FetchType.LAZY)
 	private DataCenterConfigMaster dataCenterConfig;
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -47,10 +47,10 @@ public class Droplet {
 	public void setDropletName(String dropletName) {
 		this.dropletName = dropletName;
 	}
-	public DataCenterLocationMaster getDataCenterLocation() {
+	public DataCenterMaster getDataCenterLocation() {
 		return dataCenterLocation;
 	}
-	public void setDataCenterLocation(DataCenterLocationMaster dataCenterLocation) {
+	public void setDataCenterLocation(DataCenterMaster dataCenterLocation) {
 		this.dataCenterLocation = dataCenterLocation;
 	}
 	public DataCenterConfigMaster getDataCenterConfig() {
