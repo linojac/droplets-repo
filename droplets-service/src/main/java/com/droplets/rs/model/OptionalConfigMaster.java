@@ -12,6 +12,7 @@ public class OptionalConfigMaster {
 	@GeneratedValue
 	@Column(name="optional_id")
 	private long optionalId;
+	private String itemName;
 
 	public long getOptionalId() {
 		return optionalId;
@@ -29,5 +30,4 @@ public class OptionalConfigMaster {
 		this.itemName = itemName;
 	}
 
-	private String itemName;
 }

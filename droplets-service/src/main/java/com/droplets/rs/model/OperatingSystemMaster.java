@@ -1,8 +1,13 @@
 package com.droplets.rs.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class OperatingSystemMaster {
@@ -13,7 +18,8 @@ public class OperatingSystemMaster {
 
 	private String osName;
 
-	private String osVersion;
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+	private Set<OsVersion> osVersion;
 
 	public long getId() {
 		return id;
@@ -31,12 +37,14 @@ public class OperatingSystemMaster {
 		this.osName = osName;
 	}
 
-	public String getOsVersion() {
+	public Set<OsVersion> getOsVersion() {
 		return osVersion;
 	}
 
-	public void setOsVersion(String osVersion) {
+	public void setOsVersion(Set<OsVersion> osVersion) {
 		this.osVersion = osVersion;
 	}
+
+
 
 }

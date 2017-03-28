@@ -30,6 +30,8 @@ public class Droplet {
 	private SecureSocketShellData secureSocketShellData;
 	@ManyToOne(fetch = FetchType.LAZY)
 	private OperatingSystemMaster operatingSystem;
+	@ManyToOne(fetch=FetchType.LAZY , cascade = CascadeType.ALL)
+	private Customer customer;
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<OptionalConfigMaster> optionalConfig;
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
@@ -82,6 +84,12 @@ public class Droplet {
 	}
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

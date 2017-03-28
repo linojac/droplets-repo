@@ -3,6 +3,7 @@ package com.droplets.rs.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,6 +13,7 @@ import com.droplets.rs.model.OperatingSystemMaster;
 import com.droplets.rs.model.OptionalConfigMaster;
 import com.droplets.rs.service.MasterDataService;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/master")
 public class MasterDataController {

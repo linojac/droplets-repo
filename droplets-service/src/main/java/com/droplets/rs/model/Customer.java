@@ -3,6 +3,7 @@ package com.droplets.rs.model;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,10 +20,13 @@ public class Customer {
 	private String lastName;
 	private String userName;
 	private char[] password;
+	@Column(columnDefinition="boolean default true")
 	private boolean active;
-	
 	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private Set<Droplet> droplets;
+	@OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
+	private Set<SecureSocketShellData> secureSocketShellDatas;
+	
 	
 	public long getId() {
 		return id;
@@ -59,6 +63,12 @@ public class Customer {
 	}
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+	public Set<SecureSocketShellData> getSecureSocketShellDatas() {
+		return secureSocketShellDatas;
+	}
+	public void setSecureSocketShellDatas(Set<SecureSocketShellData> secureSocketShellDatas) {
+		this.secureSocketShellDatas = secureSocketShellDatas;
 	}
 	
 	
