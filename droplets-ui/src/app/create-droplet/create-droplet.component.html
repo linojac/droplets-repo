@@ -1,5 +1,17 @@
 <div>
-	<h1>Choose an Image</h1>
-	
-	
+	<h2>Choose an Image</h2>
+	<form #form="ngForm">
+		<div class="form-group">
+			<div class="btn-group">
+  <label class="btn btn-primary" name="radioModel" ngModel btnRadio="Left">Left</label>  
+  <label class="btn btn-primary" name="radioModel" ngModel btnRadio="Middle">Middle</label>
+  <label class="btn btn-primary" name="radioModel" ngModel btnRadio="Right">Right</label>
+</div>kk
+{{radioModel || null}}
+		</div>
+		touched{{form.touched}}<br/>
+		untouched{{form.untouched}}<br/>
+		ristine{{form.pristine}}<br/>
+		dirty{{form.dirty}}<br/>
+	</form>
 </div>

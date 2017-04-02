@@ -18,6 +18,8 @@ export class CreateDropletComponent implements OnInit {
     optionalConfigs: Object[];
     customer: Object;
 
+    radioModel: string;
+    
     ngOnInit() {
         this._masterDataService.getDataCenters().subscribe(data => this.dataCenters = data);
         this._masterDataService.getDataCenterConfigs().subscribe(data => this.dcConfigs = data);

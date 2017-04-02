@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MasterDataService } from './service/master-data.service';
 import { DropletsService } from './service/droplets.service';
+import { CustomerService } from './service/customer.service';
 import { CreateDropletComponent } from './create-droplet/create-droplet.component';
 
 @NgModule({
@@ -18,7 +19,7 @@ import { CreateDropletComponent } from './create-droplet/create-droplet.componen
     FormsModule,
     HttpModule
   ],
-  providers: [DropletsService, MasterDataService],
+  providers: [DropletsService,CustomerService, MasterDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
